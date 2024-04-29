@@ -9,7 +9,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.hey_viswa.todo.R
 
-
+// You can customize you font
 val fonts = FontFamily(
     Font(R.font.nunito_bold, weight = FontWeight.Bold),
     Font(R.font.nunito_italic, style = FontStyle.Italic),
@@ -17,6 +17,7 @@ val fonts = FontFamily(
     Font(R.font.nunito_regular, weight = FontWeight.Normal),
     Font(R.font.nunito_medium, weight = FontWeight.Medium),
 )
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(
