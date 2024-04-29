@@ -1,4 +1,4 @@
- package com.hey_viswa.todo
+ package com.hey_viswa.todo.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
