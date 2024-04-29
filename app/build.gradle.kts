@@ -93,6 +93,9 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation (libs.androidx.room.ktx)
+
+    // Google Font
+    implementation(libs.androidx.ui.text.google.fonts)
 }
 // Allow references to generated code
 kapt {
