@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.sp
 import com.hey_viswa.todo.R
 
 // You can customize you font
-val fonts = FontFamily(
+val nunito = FontFamily(
     Font(R.font.nunito_bold, weight = FontWeight.Bold),
     Font(R.font.nunito_italic, style = FontStyle.Italic),
     Font(R.font.nunito_light, weight = FontWeight.Light),
@@ -21,21 +21,21 @@ val fonts = FontFamily(
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = fonts ,
+        fontFamily = nunito ,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     ),
     titleLarge = TextStyle(
-        fontFamily = fonts,
+        fontFamily = nunito,
         fontWeight = FontWeight.Normal,
         fontSize = 22.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp
     ),
     labelSmall = TextStyle(
-        fontFamily = fonts,
+        fontFamily = nunito,
         fontWeight = FontWeight.Medium,
         fontSize = 11.sp,
         lineHeight = 16.sp,
