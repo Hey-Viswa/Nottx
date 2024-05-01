@@ -22,7 +22,7 @@ data class Note(
     @PrimaryKey val id: Int? = null
 ) {
     companion object {
-        val noteColor = listOf(
+        val NoteColors = listOf(
             RedOrange, RedPink, BabyBlue, Violet, LightGreen, Purple, Turnip,
             CreamPistashio, Pistas, CreamOrange
         )
