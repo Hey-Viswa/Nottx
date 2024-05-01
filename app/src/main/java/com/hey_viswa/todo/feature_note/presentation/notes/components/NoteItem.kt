@@ -108,15 +108,3 @@ fun NoteItem(
     }
 }
 
-@Preview
-@Composable
-private fun temp() {
-    NoteItem(note = Note(
-        title = "Icons",
-        content = "fuckyou",
-        timeStamp = 10_04_2024,
-        color = 0x00ff00
-    )) {
-        
-    }
-}
