@@ -39,13 +39,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.hey_viswa.todo.feature_note.presentation.notes.components.NoteItem
 import com.hey_viswa.todo.feature_note.presentation.notes.components.OrderSection
+import com.hey_viswa.todo.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -62,7 +62,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                  navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 containerColor = MaterialTheme.colorScheme.primary
             ) {
@@ -99,7 +99,6 @@ fun NotesScreen(
             AnimatedVisibility(
                 visible = state.isOrderSectionVisible,
                 enter = slideInVertically {
-
                     with(density) { -40.dp.roundToPx() }
                 } + expandVertically(
 
@@ -121,10 +120,13 @@ fun NotesScreen(
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
+
+            // TODO: Switch layout to line by line 
+            // TODO: swipe to delete 
             LazyVerticalStaggeredGrid(
-                columns = StaggeredGridCells.Adaptive(200.dp),
-                verticalItemSpacing = 8.dp,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                columns = StaggeredGridCells.Fixed(2),
+                verticalItemSpacing = 4.dp,
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
             ) {
                 items(state.notes){ note ->
                     NoteItem(
@@ -132,7 +134,10 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditNoteScreen.route + "" +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewmodel.onEvent(NotesEvent.Delete(note))
